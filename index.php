@@ -11,16 +11,7 @@
 <body>
     
 <?php 
-
-    $length = $_GET['length'];
-
-    function createPassword($length) {
-        if($length <= 0) {
-            return '';
-        }
-        $data ='1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz!?@#[]';
-        return substr(str_shuffle($data), 0, $length);
-    }
+ require __DIR__ . '/functions.php';
 
 ?>
     <form method="GET" action="index.php">
