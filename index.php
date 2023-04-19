@@ -11,8 +11,16 @@
 <body>
     
 <?php 
- require __DIR__ . '/functions.php';
+    require __DIR__ . '/functions.php';
 
+    session_start();
+
+    $_SESSION['page'] = createPassword($length);
+
+    if(createPassword($length)) {
+        header('Location: password.php');
+    }
+    
 ?>
     <form method="GET" action="index.php">
         <label for="parola">Inserisci lunghezza password</label>
@@ -21,6 +29,5 @@
         <button type="submit">Crea</button>
         
     </form>
-    <?php echo createPassword($length); ?>
 </body>
 </html>
